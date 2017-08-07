@@ -1,5 +1,14 @@
 <resources>
+
+    <!-- font begin-->
+    <string name="Roboto_Thin">sans-serif-thin</string>
+    <string name="Roboto_Light">sans-serif-light</string>
+    <string name="Roboto_Regular">sans-serif</string>
+    <string name="Roboto_Medium">sans-serif-medium</string>
+    <string name="Roboto_bold">sans-serif-bold</string>
+    <!-- font end-->
+
     <string name="app_name">ToolSet</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">More</string>
     <string name="section_format">Hello World from section: %1$d</string>
 </resources>

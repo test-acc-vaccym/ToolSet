@@ -57,7 +57,8 @@ public class BatteryService extends Service {
     }
 
     // 接收电池信息更新的广播
-    private BroadcastReceiver batteryReceiver = new BroadcastReceiver() {
+    public static BroadcastReceiver batteryReceiver = new BroadcastReceiverImp();
+        public static class BroadcastReceiverImp extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.i(TAG, "BatteryReceiver--------------");

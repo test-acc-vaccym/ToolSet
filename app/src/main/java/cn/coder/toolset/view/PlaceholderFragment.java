@@ -7,6 +7,7 @@ package cn.coder.toolset.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,9 +77,10 @@ public class PlaceholderFragment extends Fragment {
         rootView.findViewById(R.id.btn_send).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String battery = ((EditText)rootView.findViewById(R.id.et_percent_power)).getText().toString();
-
-                SimilateBatteryChange.send(Float.valueOf(battery));
+                String battery = ((EditText) rootView.findViewById(R.id.et_percent_power)).getText().toString();
+                if (!TextUtils.isEmpty(battery)) {
+                    SimilateBatteryChange.send(Float.valueOf(battery));
+                }
             }
         });
         return rootView;
@@ -92,6 +94,7 @@ public class PlaceholderFragment extends Fragment {
     private class FeatureGridAdapter extends BaseAdapter {
         private LayoutInflater mInflater;
         private ArrayList<Feature> mList = new ArrayList<>();
+
         private FeatureGridAdapter(LayoutInflater inflater, ArrayList<Feature> features) {
             mInflater = inflater;
             mList.addAll(features);
@@ -116,8 +119,8 @@ public class PlaceholderFragment extends Fragment {
         public View getView(final int position, View contentView, ViewGroup parent) {
             if (contentView == null) {
                 contentView = mInflater.inflate(R.layout.feature_item, null);
-                ((TextView)contentView.findViewById(R.id.tv_feature_title)).setText(mList.get(position).mFeatureTitle);
-                ((TextView)contentView.findViewById(R.id.tv_feature_des)).setText(mList.get(position).mFeatureDes);
+                ((TextView) contentView.findViewById(R.id.tv_feature_title)).setText(mList.get(position).mFeatureTitle);
+                ((TextView) contentView.findViewById(R.id.tv_feature_des)).setText(mList.get(position).mFeatureDes);
                 contentView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

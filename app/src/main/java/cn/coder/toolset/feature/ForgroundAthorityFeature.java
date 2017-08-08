@@ -1,16 +1,13 @@
-package cn.coder.toolset.model;
+package cn.coder.toolset.feature;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.provider.Settings;
 import android.util.Log;
-import android.widget.Toast;
 
 import cn.coder.toolset.Common.Constant;
-import cn.coder.toolset.Common.Feature;
 import cn.coder.toolset.Common.ToolSetApplication;
 
 /**

@@ -1,17 +1,17 @@
-package cn.coder.toolset.model;
+package cn.coder.toolset.tool;
 
 import android.content.Intent;
 
-import cn.coder.toolset.Common.Feature;
+import cn.coder.toolset.feature.Feature;
 import cn.coder.toolset.Common.ToolSetApplication;
 
 /**
  * Created by Administrator on 2017/8/8.
  */
 
-public class DeviceMgrAuthority extends Feature {
-    public DeviceMgrAuthority() {
-        super("设备管理权限", "获取设备管理权限");
+public class AppMgrTool extends Tool {
+    public AppMgrTool() {
+        super("管理App", "Clear App Entry");
     }
 
     @Override

@@ -2,12 +2,12 @@ package cn.coder.toolset.manager;
 
 import java.util.ArrayList;
 
-import cn.coder.toolset.Common.Feature;
-import cn.coder.toolset.model.AppMgrFeature;
-import cn.coder.toolset.model.ClearPSDataFeature;
-import cn.coder.toolset.model.DeviceMgrAuthority;
-import cn.coder.toolset.model.ForgroundAthorityFeature;
-import cn.coder.toolset.model.NotificationAthority;
+import cn.coder.toolset.feature.Feature;
+import cn.coder.toolset.tool.AppMgrTool;
+import cn.coder.toolset.feature.ClearPSDataFeature;
+import cn.coder.toolset.feature.DeviceMgrAuthority;
+import cn.coder.toolset.feature.ForgroundAthorityFeature;
+import cn.coder.toolset.feature.NotificationAthority;
 
 /**
  * Created by Administrator on 2017/8/7.
@@ -34,7 +34,7 @@ public class FeatureManager {
         mFeatureSet.add(new ForgroundAthorityFeature());
         mFeatureSet.add(new NotificationAthority());
         mFeatureSet.add(new DeviceMgrAuthority());
-        mFeatureSet.add(new AppMgrFeature());
+//        mFeatureSet.add(new AppMgrTool());
     }
 
     public ArrayList getFeatureSet() {

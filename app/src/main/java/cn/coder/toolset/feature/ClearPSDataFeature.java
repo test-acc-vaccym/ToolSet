@@ -1,8 +1,6 @@
-package cn.coder.toolset.model;
+package cn.coder.toolset.feature;
 
 import cn.coder.toolset.Common.Constant;
-import cn.coder.toolset.Common.Feature;
-import cn.coder.toolset.Common.ToolSetApplication;
 import cn.coder.toolset.Util.PackageUtil;
 
 /**

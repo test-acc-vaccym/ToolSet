@@ -17,11 +17,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import cn.coder.toolset.Common.Feature;
+import cn.coder.toolset.feature.Feature;
 import cn.coder.toolset.R;
 import cn.coder.toolset.Util.SimilateBatteryChange;
 import cn.coder.toolset.manager.FeatureManager;
-import cn.coder.toolset.model.ClearPSDataFeature;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -73,16 +72,6 @@ public class PlaceholderFragment extends Fragment {
         mGridView = (MyGridView) rootView.findViewById(R.id.feature_grid);
         mFeatureAdapter = new FeatureGridAdapter(inflater, clearPSDataFeatureSets);
         mGridView.setAdapter(mFeatureAdapter);
-
-        rootView.findViewById(R.id.btn_send).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String battery = ((EditText) rootView.findViewById(R.id.et_percent_power)).getText().toString();
-                if (!TextUtils.isEmpty(battery)) {
-                    SimilateBatteryChange.send(Float.valueOf(battery));
-                }
-            }
-        });
         return rootView;
     }
 

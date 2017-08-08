@@ -1,5 +1,6 @@
-package cn.coder.toolset;
+package cn.coder.toolset.activity;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,7 +11,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import cn.coder.toolset.R;
 import cn.coder.toolset.adapter.SectionsPagerAdapter;
+import cn.coder.toolset.service.BatteryService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         initData();
-
+        startService(new Intent(this, BatteryService.class));
     }
 
     private void initData() {

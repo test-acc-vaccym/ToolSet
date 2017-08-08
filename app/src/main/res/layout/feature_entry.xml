@@ -1,12 +1,13 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cn.coder.toolset.MainActivity">
+    tools:context="cn.coder.toolset.activity.MainActivity">
 
     <cn.coder.toolset.view.MyGridView
         android:id="@+id/feature_grid"
@@ -17,10 +18,45 @@
         android:layout_marginRight="2dp"
         android:layout_marginTop="28dp"
         android:gravity="center"
-        android:horizontalSpacing="12dp"
+        android:horizontalSpacing="2dp"
         android:listSelector="@android:color/transparent"
         android:numColumns="2"
         android:stretchMode="columnWidth"
         android:visibility="visible" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="模拟低电量广播："
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/et_percent_power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="00"
+            android:inputType="numberDecimal"
+            android:minWidth="100dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="send" />
+    </LinearLayout>
+
+</LinearLayout>

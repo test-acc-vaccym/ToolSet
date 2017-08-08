@@ -5,21 +5,22 @@ package cn.coder.toolset.view;
  */
 
 
-import android.app.Application;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import cn.coder.toolset.Common.Feature;
 import cn.coder.toolset.R;
-import cn.coder.toolset.model.FeatureSet;
+import cn.coder.toolset.Util.SimilateBatteryChange;
+import cn.coder.toolset.manager.FeatureManager;
+import cn.coder.toolset.model.ClearPSDataFeature;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -64,18 +65,22 @@ public class PlaceholderFragment extends Fragment {
     }
 
     private View getFeatureEntryView(LayoutInflater inflater, ViewGroup container) {
-        View rootView = inflater.inflate(R.layout.feature_entry, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+        final View rootView = inflater.inflate(R.layout.feature_entry, container, false);
 
-        ArrayList<FeatureSet> featureSets = new ArrayList<>();
-
-        for (int i = 0; i < 10; i++){
-            featureSets.add(new FeatureSet("feature" + i, "des " + i));
-        }
+        ArrayList<Feature> clearPSDataFeatureSets = FeatureManager.getsInstance().getFeatureSet();
 
         mGridView = (MyGridView) rootView.findViewById(R.id.feature_grid);
-        mFeatureAdapter = new FeatureGridAdapter(inflater, featureSets);
+        mFeatureAdapter = new FeatureGridAdapter(inflater, clearPSDataFeatureSets);
         mGridView.setAdapter(mFeatureAdapter);
+
+        rootView.findViewById(R.id.btn_send).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String battery = ((EditText)rootView.findViewById(R.id.et_percent_power)).getText().toString();
+
+                SimilateBatteryChange.send(Float.valueOf(battery));
+            }
+        });
         return rootView;
     }
 
@@ -86,10 +91,10 @@ public class PlaceholderFragment extends Fragment {
 
     private class FeatureGridAdapter extends BaseAdapter {
         private LayoutInflater mInflater;
-        private ArrayList<FeatureSet> mList = new ArrayList<>();
-        private FeatureGridAdapter(LayoutInflater inflater, ArrayList<FeatureSet> featureSets) {
+        private ArrayList<Feature> mList = new ArrayList<>();
+        private FeatureGridAdapter(LayoutInflater inflater, ArrayList<Feature> features) {
             mInflater = inflater;
-            mList.addAll(featureSets);
+            mList.addAll(features);
         }
 
         @Override
@@ -111,12 +116,13 @@ public class PlaceholderFragment extends Fragment {
         public View getView(final int position, View contentView, ViewGroup parent) {
             if (contentView == null) {
                 contentView = mInflater.inflate(R.layout.feature_item, null);
-                ((TextView)contentView.findViewById(R.id.tv_feature_title)).setText(mList.get(position).FeatureTitle);
-                ((TextView)contentView.findViewById(R.id.tv_feature_des)).setText(mList.get(position).FeatureDes);
+                ((TextView)contentView.findViewById(R.id.tv_feature_title)).setText(mList.get(position).mFeatureTitle);
+                ((TextView)contentView.findViewById(R.id.tv_feature_des)).setText(mList.get(position).mFeatureDes);
                 contentView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        guideAction();
+                        Feature featureAction = mList.get(position);
+                        featureAction.action();
                     }
                 });
             }

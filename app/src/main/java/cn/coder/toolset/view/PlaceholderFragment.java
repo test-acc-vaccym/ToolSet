@@ -7,20 +7,18 @@ package cn.coder.toolset.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import cn.coder.toolset.feature.Feature;
 import cn.coder.toolset.R;
-import cn.coder.toolset.Util.SimilateBatteryChange;
 import cn.coder.toolset.manager.FeatureManager;
+import cn.coder.toolset.manager.ToolManager;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -33,8 +31,6 @@ public class PlaceholderFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 
 
-    private MyGridView mGridView;
-    private FeatureGridAdapter mFeatureAdapter;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -67,24 +63,34 @@ public class PlaceholderFragment extends Fragment {
     private View getFeatureEntryView(LayoutInflater inflater, ViewGroup container) {
         final View rootView = inflater.inflate(R.layout.feature_entry, container, false);
 
-        ArrayList<Feature> clearPSDataFeatureSets = FeatureManager.getsInstance().getFeatureSet();
+        ArrayList<Feature> clearPSDataFeatureSets = FeatureManager.getInstance().getFeatureSet();
+
+        MyGridView mGridView;
 
         mGridView = (MyGridView) rootView.findViewById(R.id.feature_grid);
-        mFeatureAdapter = new FeatureGridAdapter(inflater, clearPSDataFeatureSets);
-        mGridView.setAdapter(mFeatureAdapter);
+        GridAdapter featureAdapter = new GridAdapter(inflater, clearPSDataFeatureSets);
+        mGridView.setAdapter(featureAdapter);
         return rootView;
     }
 
     private View getAppMgrView(LayoutInflater inflater, ViewGroup container) {
-        View rootView = inflater.inflate(R.layout.app_mgr, container, false);
+        View rootView = inflater.inflate(R.layout.tool_entry, container, false);
+
+        ArrayList<Feature> toolSet = ToolManager.getInstance().getToolSet();
+
+        MyGridView mGridView;
+
+        mGridView = (MyGridView) rootView.findViewById(R.id.tool_grid);
+        GridAdapter toolAdapter = new GridAdapter(inflater, toolSet);
+        mGridView.setAdapter(toolAdapter);
         return rootView;
     }
 
-    private class FeatureGridAdapter extends BaseAdapter {
+    private class GridAdapter extends BaseAdapter {
         private LayoutInflater mInflater;
         private ArrayList<Feature> mList = new ArrayList<>();
 
-        private FeatureGridAdapter(LayoutInflater inflater, ArrayList<Feature> features) {
+        private GridAdapter(LayoutInflater inflater, ArrayList<Feature> features) {
             mInflater = inflater;
             mList.addAll(features);
         }

@@ -22,6 +22,7 @@ public class DeviceMgrAuthority extends Feature {
 
     public void deviceMgrAuthorize(Context context) {
         Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //        intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mDeviceAdminComponent);
 //        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, ResourceUtil.getString(R.string.device_manager_desc_in_system));
         context.startActivity(intent);

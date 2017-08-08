@@ -4,8 +4,6 @@
     style="@style/cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="4dp"
-    android:layout_marginRight="4dp"
     android:minHeight="100dp"
     android:orientation="horizontal"
     android:paddingBottom="12dp"

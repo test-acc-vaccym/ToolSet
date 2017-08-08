@@ -18,7 +18,7 @@ public class FeatureManager {
 
     ArrayList<Feature> mFeatureSet = new ArrayList<>();
 
-    public static FeatureManager getsInstance() {
+    public static FeatureManager getInstance() {
         if (sInstance == null) {
             synchronized (FeatureManager.class) {
                 if (sInstance == null) {
@@ -34,7 +34,6 @@ public class FeatureManager {
         mFeatureSet.add(new ForgroundAthorityFeature());
         mFeatureSet.add(new NotificationAthority());
         mFeatureSet.add(new DeviceMgrAuthority());
-//        mFeatureSet.add(new AppMgrTool());
     }
 
     public ArrayList getFeatureSet() {

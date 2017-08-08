@@ -40,7 +40,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return "Feature Entry";
             case 1:
-                return "App Mgr";
+                return "Tools Set";
         }
         return null;
     }

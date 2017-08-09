@@ -31,7 +31,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show 2 total pages.
-        return 2;
+        return 3;
     }
 
     @Override
@@ -41,6 +41,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return "Feature Entry";
             case 1:
                 return "Tools Set";
+            case 2:
+                return "Tec Storage";
         }
         return null;
     }

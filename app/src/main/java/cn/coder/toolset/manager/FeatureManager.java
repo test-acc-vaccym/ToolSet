@@ -2,6 +2,7 @@ package cn.coder.toolset.manager;
 
 import java.util.ArrayList;
 
+import cn.coder.toolset.feature.AccessibilityFeature;
 import cn.coder.toolset.feature.Feature;
 import cn.coder.toolset.tool.AppMgrTool;
 import cn.coder.toolset.feature.ClearPSDataFeature;
@@ -34,6 +35,7 @@ public class FeatureManager {
         mFeatureSet.add(new ForgroundAthorityFeature());
         mFeatureSet.add(new NotificationAthority());
         mFeatureSet.add(new DeviceMgrAuthority());
+        mFeatureSet.add(new AccessibilityFeature());
     }
 
     public ArrayList getFeatureSet() {

@@ -20,4 +20,10 @@ public class IntentUtil {
         Intent intent = new Intent(content);
         return intent;
     }
+
+    public static Intent getIntent(String action){
+        Intent intent = new Intent(action);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        return intent;
+    }
 }

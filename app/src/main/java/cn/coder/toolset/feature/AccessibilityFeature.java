@@ -20,6 +20,6 @@ public class AccessibilityFeature extends Feature {
     public void action() {
         String action = Settings.ACTION_ACCESSIBILITY_SETTINGS;
         Intent intent = IntentUtil.getIntent(action);
-        ToolSetApplication.getInstance().startActivity(intent);
+        startActivity(intent);
     }
 }

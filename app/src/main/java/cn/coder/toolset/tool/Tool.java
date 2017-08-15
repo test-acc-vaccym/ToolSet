@@ -1,5 +1,9 @@
 package cn.coder.toolset.tool;
 
+import android.app.Activity;
+import android.content.Intent;
+
+import cn.coder.toolset.Common.ToolSetApplication;
 import cn.coder.toolset.feature.Feature;
 
 /**

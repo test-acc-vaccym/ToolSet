@@ -23,7 +23,7 @@ public class IntentUtil {
 
     public static Intent getIntent(String action){
         Intent intent = new Intent(action);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         return intent;
     }
 }

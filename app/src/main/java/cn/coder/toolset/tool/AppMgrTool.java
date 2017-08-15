@@ -24,6 +24,6 @@ public class AppMgrTool extends Tool {
         intent.setAction("android.intent.action.MAIN");
         intent.setClassName("com.android.settings", "com.android.settings.ManageApplications");
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        ToolSetApplication.getInstance().startActivity(intent);
+        startActivity(intent);
     }
 }

@@ -18,8 +18,7 @@ public class AccessibilityFeature extends Feature {
 
     @Override
     public void action() {
-        String action = Settings.ACTION_ACCESSIBILITY_SETTINGS;
-        Intent intent = IntentUtil.getIntent(action);
+        Intent intent = IntentUtil.getIntent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
         startActivity(intent);
     }
 }

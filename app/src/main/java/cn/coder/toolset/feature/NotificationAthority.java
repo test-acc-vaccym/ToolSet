@@ -7,6 +7,7 @@ import android.util.Log;
 
 import cn.coder.toolset.Common.Constant;
 import cn.coder.toolset.Common.ToolSetApplication;
+import cn.coder.toolset.Util.IntentUtil;
 
 /**
  * Created by Administrator on 2017/8/8.
@@ -21,16 +22,7 @@ public class NotificationAthority extends Feature {
 
     @Override
     public void action() {
-        requestNotificationPermission(ToolSetApplication.getInstance().getApplicationContext());
-    }
-
-    public static void requestNotificationPermission(Context context) {
-        try {
-            Intent intent = new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-        } catch (Exception e) {
-            Log.d(Constant.LOG_TAG, e.getMessage());
-        }
+        Intent intent = IntentUtil.getIntent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
+        startActivity(intent);
     }
 }

@@ -2,6 +2,7 @@ package cn.coder.toolset.tool;
 
 import android.content.Intent;
 
+import cn.coder.toolset.Util.IntentUtil;
 import cn.coder.toolset.feature.Feature;
 import cn.coder.toolset.Common.ToolSetApplication;
 
@@ -20,10 +21,8 @@ public class AppMgrTool extends Tool {
     }
 
     private void appMgr() {
-        Intent intent = new Intent();
-        intent.setAction("android.intent.action.MAIN");
+        Intent intent = IntentUtil.getIntent("android.intent.action.MAIN");
         intent.setClassName("com.android.settings", "com.android.settings.ManageApplications");
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }

@@ -2,6 +2,7 @@ package cn.coder.toolset.manager;
 
 import java.util.ArrayList;
 
+import cn.coder.toolset.Common.Singleton;
 import cn.coder.toolset.feature.AccessibilityFeature;
 import cn.coder.toolset.feature.Feature;
 import cn.coder.toolset.tool.AppMgrTool;

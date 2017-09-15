@@ -279,4 +279,6 @@
     <color name="color_CD070000">#CD070000</color>
     <color name="color_FFF1F1F1">#FFF1F1F1</color>
     <color name="color_1400C858">#1400C858</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

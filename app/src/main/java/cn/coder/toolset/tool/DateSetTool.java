@@ -1,5 +1,6 @@
 package cn.coder.toolset.tool;
 
+import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
 
@@ -16,7 +17,7 @@ public class DateSetTool extends Tool {
     }
 
     @Override
-    public void action() {
+    public void action(Context context) {
         Intent intent = IntentUtil.getIntent(Settings.ACTION_DATE_SETTINGS);
         startActivity(intent);
     }

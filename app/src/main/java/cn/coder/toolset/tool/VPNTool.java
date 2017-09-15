@@ -1,5 +1,6 @@
 package cn.coder.toolset.tool;
 
+import android.content.Context;
 import android.content.Intent;
 
 import cn.coder.toolset.Common.ToolSetApplication;
@@ -15,7 +16,7 @@ public class VPNTool extends Tool {
     }
 
     @Override
-    public void action() {
+    public void action(Context context) {
         Intent intent = IntentUtil.getIntent("android.net.vpn.SETTINGS");
         startActivity(intent);
     }

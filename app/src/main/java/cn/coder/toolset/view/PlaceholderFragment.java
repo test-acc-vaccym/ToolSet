@@ -5,6 +5,7 @@ package cn.coder.toolset.view;
  */
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,15 +16,18 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import cn.coder.toolset.TecStorage.TecStorage;
 import cn.coder.toolset.feature.Feature;
 import cn.coder.toolset.R;
 import cn.coder.toolset.manager.FeatureManager;
+import cn.coder.toolset.manager.TecStorageManager;
 import cn.coder.toolset.manager.ToolManager;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class PlaceholderFragment extends Fragment {
+    private static Context mContext;
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -36,7 +40,8 @@ public class PlaceholderFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static PlaceholderFragment newInstance(int sectionNumber) {
+    public static PlaceholderFragment newInstance(int sectionNumber, Context context) {
+        mContext = context;
         PlaceholderFragment fragment = new PlaceholderFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
@@ -56,6 +61,8 @@ public class PlaceholderFragment extends Fragment {
             rootView = getFeatureEntryView(inflater, container);
         } else if (pageCount == 1) {
             rootView = getAppMgrView(inflater, container);
+        }else if (pageCount == 2){
+            rootView = getTecStorageView(inflater, container);
         }
         return rootView;
     }
@@ -82,6 +89,19 @@ public class PlaceholderFragment extends Fragment {
 
         mGridView = (MyGridView) rootView.findViewById(R.id.tool_grid);
         GridAdapter toolAdapter = new GridAdapter(inflater, toolSet);
+        mGridView.setAdapter(toolAdapter);
+        return rootView;
+    }
+
+    private View getTecStorageView(LayoutInflater inflater, ViewGroup container) {
+        View rootView = inflater.inflate(R.layout.tool_entry, container, false);
+
+        ArrayList<Feature> tecStorages = TecStorageManager.getInstance().getTecStorages();
+
+        MyGridView mGridView;
+
+        mGridView = (MyGridView) rootView.findViewById(R.id.tool_grid);
+        GridAdapter toolAdapter = new GridAdapter(inflater, tecStorages);
         mGridView.setAdapter(toolAdapter);
         return rootView;
     }
@@ -120,7 +140,7 @@ public class PlaceholderFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Feature featureAction = mList.get(position);
-                        featureAction.action();
+                        featureAction.action(mContext);
                     }
                 });
             }

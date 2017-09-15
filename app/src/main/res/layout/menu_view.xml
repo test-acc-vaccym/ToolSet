@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@mipmap/menu_bg"
+    android:background="@drawable/menu_bg"
     android:orientation="vertical"  android:id="@+id/menu_view">
 
     <LinearLayout
@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/menu_btn_night_select" />
+                android:src="@drawable/menu_bg" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/menu_btn_word_mode_select" />
+                android:src="@drawable/menu_bg" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="mipmap/btn_menu_exit_select" />
+                android:src="@drawable/btn_menu_exit" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
     <Button android:id="@+id/btnCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/menu_bottom_bg_select"
+        android:background="@drawable/menu_bg"
         android:text="取消"
         android:textColor="#3769C1" />
 

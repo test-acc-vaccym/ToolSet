@@ -1,5 +1,7 @@
 package cn.coder.toolset.feature;
 
+import android.content.Context;
+
 import cn.coder.toolset.Common.Constant;
 import cn.coder.toolset.Util.PackageUtil;
 
@@ -14,7 +16,7 @@ public class ClearPSDataFeature extends Feature {
     }
 
     @Override
-    public void action() {
+    public void action(Context context) {
         PackageUtil.showInstalledAppDetails(Constant.PackageName);
     }
 }

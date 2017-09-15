@@ -1,5 +1,6 @@
 package cn.coder.toolset.tool;
 
+import android.content.Context;
 import android.content.Intent;
 
 import cn.coder.toolset.Util.IntentUtil;
@@ -16,7 +17,7 @@ public class AppMgrTool extends Tool {
     }
 
     @Override
-    public void action() {
+    public void action(Context context) {
         appMgr();
     }
 

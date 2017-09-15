@@ -11,4 +11,12 @@
     <string name="app_name">ToolSet</string>
     <string name="action_settings">More</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="device_mgr_athorize_test">设备管理权限测试。。。</string>
+
+    <string name="title_activity_surface">SurfaceActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_spar_view">SparViewActivity</string>
 </resources>

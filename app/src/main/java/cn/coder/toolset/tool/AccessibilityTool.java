@@ -1,5 +1,6 @@
 package cn.coder.toolset.tool;
 
+import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
 
@@ -15,7 +16,7 @@ public class AccessibilityTool extends Tool {
     }
 
     @Override
-    public void action() {
+    public void action(Context context) {
         startActivity(IntentUtil.getIntent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
     }
 }

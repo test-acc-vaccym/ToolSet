@@ -1,5 +1,11 @@
 package cn.coder.toolset.manager;
 
+import java.util.ArrayList;
+
+import cn.coder.toolset.TecStorage.SparSurfaceView;
+import cn.coder.toolset.TecStorage.SurfaceViewAbout;
+import cn.coder.toolset.TecStorage.TecStorage;
+
 /**
  * Created by Administrator on 2017/8/16.
  */
@@ -7,7 +13,9 @@ package cn.coder.toolset.manager;
 public class TecStorageManager {
     private static TecStorageManager sInstance;
 
-    public TecStorageManager getInstance(){
+    ArrayList<TecStorage> tecStorages = new ArrayList<>();
+
+    public static TecStorageManager getInstance(){
         if (sInstance == null){
             synchronized (TecStorageManager.class){
                 if (sInstance == null){
@@ -19,7 +27,12 @@ public class TecStorageManager {
     }
     
     private TecStorageManager(){
-        // TODO: 2017/8/16
+        tecStorages.add(new SurfaceViewAbout());
+        tecStorages.add(new SparSurfaceView());
+    }
+
+    public ArrayList getTecStorages(){
+        return tecStorages;
     }
 
 }

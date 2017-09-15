@@ -1,5 +1,6 @@
 package cn.coder.toolset.feature;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.audiofx.BassBoost;
 import android.provider.Settings;
@@ -17,7 +18,7 @@ public class AccessibilityFeature extends Feature {
     }
 
     @Override
-    public void action() {
+    public void action(Context context) {
         Intent intent = IntentUtil.getIntent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
         startActivity(intent);
     }

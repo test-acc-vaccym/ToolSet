@@ -21,7 +21,7 @@ public class NotificationAthority extends Feature {
     }
 
     @Override
-    public void action() {
+    public void action(Context context) {
         Intent intent = IntentUtil.getIntent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
         startActivity(intent);
     }

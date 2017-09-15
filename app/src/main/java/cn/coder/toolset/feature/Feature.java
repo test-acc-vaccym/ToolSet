@@ -1,5 +1,6 @@
 package cn.coder.toolset.feature;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.ImageFormat;
 import android.util.Log;
@@ -20,7 +21,7 @@ public abstract class Feature {
         mFeatureDes = des;
     }
 
-    public abstract void action();
+    public abstract void action(Context context);
 
     public void startActivity(Intent intent){
         ToolSetApplication.getInstance().startActivity(intent);

@@ -10,8 +10,8 @@ import android.content.Intent;
 
 public class IntentUtil {
 
-    public static Intent getActivityIntent(Context source, Activity target){
-        Intent intent = new Intent(source, target.getClass());
+    public static Intent getActivityIntent(Context source, Class className){
+        Intent intent = new Intent(source, className);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         return intent;
     }

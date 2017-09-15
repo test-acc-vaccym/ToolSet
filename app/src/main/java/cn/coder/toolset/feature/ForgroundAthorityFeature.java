@@ -20,7 +20,7 @@ public class ForgroundAthorityFeature extends Feature {
     }
 
     @Override
-    public void action() {
+    public void action(Context context) {
         requestStatAccessPermission(ToolSetApplication.getInstance().getApplicationContext());
 
     }

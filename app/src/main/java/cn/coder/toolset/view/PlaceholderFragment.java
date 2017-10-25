@@ -39,6 +39,8 @@ public class PlaceholderFragment extends Fragment {
     /**
      * Returns a new instance of this fragment for the given section
      * number.
+     * 在创建fragment的时候，通过setArguments为fragment设置Bundle参数。
+     * 在fragment执行onCreateView的时候通过getArguments()获取Bundle参数。
      */
     public static PlaceholderFragment newInstance(int sectionNumber, Context context) {
         mContext = context;

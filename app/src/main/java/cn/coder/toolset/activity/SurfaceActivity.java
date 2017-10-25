@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.v7.app.ActionBar;
@@ -145,7 +147,10 @@ public class SurfaceActivity extends AppCompatActivity implements SurfaceHolder.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
         mSurfaceView = (SurfaceView)findViewById(R.id.surfaceview_impl);
+        mSurfaceView.setZOrderOnTop(true);
         surfaceHolder = mSurfaceView.getHolder();
+        surfaceHolder.addCallback(this);
+        surfaceHolder.setFormat(PixelFormat.TRANSLUCENT);
     }
 
     @Override
@@ -212,6 +217,8 @@ public class SurfaceActivity extends AppCompatActivity implements SurfaceHolder.
         height = mSurfaceView.getHeight();
         Log.d("left = "+left+" top = "+top+" right = "+right+" bootom = "+bottom);
         Log.d("width = "+width+" height = "+height);
+        Canvas canvas = mSurfaceView.getHolder().lockCanvas(null);
+        canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
     }
 
     @Override

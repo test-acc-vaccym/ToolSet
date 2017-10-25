@@ -6,12 +6,16 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import java.util.Date;
+import java.util.jar.Attributes;
+
+import cn.coder.toolset.activity.SparActivity;
 
 /**
  * @author Dean Guo

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import cn.coder.toolset.R;
 import cn.coder.toolset.view.surfaceview.SparkView;
 
+// http://blog.csdn.net/a396901990/article/details/43944761
 public class SparActivity extends AppCompatActivity {
 
     @Override

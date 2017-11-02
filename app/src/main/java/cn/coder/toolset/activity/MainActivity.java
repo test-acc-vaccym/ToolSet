@@ -8,14 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import cn.coder.toolset.BuildConfig;
 import cn.coder.toolset.R;
 import cn.coder.toolset.adapter.SectionsPagerAdapter;
 import cn.coder.toolset.service.BatteryService;
 
 public class MainActivity extends AppCompatActivity {
+    private final static String TAG = "tab_page_fragment";
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         initView();
         initData();
         startService(new Intent(this, BatteryService.class));
+        if (BuildConfig.DEBUG) Log.d(TAG, "MainActivity onCreate");
     }
 
     private void initData() {
@@ -81,6 +85,36 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if (BuildConfig.DEBUG) Log.d(TAG, "MainActivity onResume");
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        if (BuildConfig.DEBUG) Log.d(TAG, "MainActivity onStart");
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        if (BuildConfig.DEBUG) Log.d(TAG, "MainActivity onPause");
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        if (BuildConfig.DEBUG) Log.d(TAG, "MainActivity onStop");
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if (BuildConfig.DEBUG) Log.d(TAG, "MainActivity onDestroy");
     }
 
 

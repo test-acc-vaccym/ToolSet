@@ -1,4 +1,4 @@
-package cn.coder.toolset.feature;
+package cn.coder.toolset.tool;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
@@ -10,12 +10,13 @@ import cn.coder.toolset.Util.IntentUtil;
 import cn.coder.toolset.Util.Log;
 import cn.coder.toolset.activity.MainActivity;
 import cn.coder.toolset.receiver.ActivateDeviceAdminReceiver;
+import cn.coder.toolset.tool.Tool;
 
 /**
  * Created by Administrator on 2017/8/8.
  */
 
-public class DeviceMgrAuthority extends Feature {
+public class DeviceMgrAuthority extends Tool {
     public DeviceMgrAuthority() {
         super("设备管理权限", "获取设备管理权限");
     }

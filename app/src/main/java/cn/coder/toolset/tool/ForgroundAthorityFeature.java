@@ -1,4 +1,4 @@
-package cn.coder.toolset.feature;
+package cn.coder.toolset.tool;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -9,12 +9,13 @@ import android.util.Log;
 
 import cn.coder.toolset.Common.Constant;
 import cn.coder.toolset.Common.ToolSetApplication;
+import cn.coder.toolset.tool.Tool;
 
 /**
  * Created by Administrator on 2017/8/8.
  */
 
-public class ForgroundAthorityFeature extends Feature {
+public class ForgroundAthorityFeature extends Tool {
     public ForgroundAthorityFeature() {
         super("前后台权限", "获取前后台权限流程");
     }

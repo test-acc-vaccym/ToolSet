@@ -1,12 +1,14 @@
-package cn.coder.toolset.feature;
+package cn.coder.toolset.tool;
 
 import android.content.Context;
+
+import cn.coder.toolset.feature.Feature;
 
 /**
  * Created by Administrator on 2017/8/16.
  */
 
-public class BoostFeature extends Feature{
+public class BoostFeature extends Feature {
     public BoostFeature() {
         super("手机加速", "对应于工程项目中的加速模块");
     }

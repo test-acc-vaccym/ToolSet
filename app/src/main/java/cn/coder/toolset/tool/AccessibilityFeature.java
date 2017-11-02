@@ -1,4 +1,4 @@
-package cn.coder.toolset.feature;
+package cn.coder.toolset.tool;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,12 +7,13 @@ import android.provider.Settings;
 
 import cn.coder.toolset.Common.ToolSetApplication;
 import cn.coder.toolset.Util.IntentUtil;
+import cn.coder.toolset.tool.Tool;
 
 /**
  * Created by Administrator on 2017/8/9.
  */
 
-public class AccessibilityFeature extends Feature {
+public class AccessibilityFeature extends Tool {
     public AccessibilityFeature() {
         super("Accessibility权限", "开启辅助功能权限");
     }

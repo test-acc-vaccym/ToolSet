@@ -9,19 +9,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cn.coder.toolset.activity.MainActivity">
 
-    <cn.coder.toolset.view.MyGridView
-        android:id="@+id/feature_grid"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginBottom="28dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginTop="28dp"
-        android:gravity="center"
-        android:horizontalSpacing="2dp"
-        android:listSelector="@android:color/transparent"
-        android:numColumns="2"
-        android:stretchMode="columnWidth"
-        android:visibility="visible" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <GridView
+                android:id="@+id/feature_grid"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="28dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:horizontalSpacing="2dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="2"
+                android:stretchMode="columnWidth"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

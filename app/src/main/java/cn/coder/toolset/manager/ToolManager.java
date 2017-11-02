@@ -2,6 +2,11 @@ package cn.coder.toolset.manager;
 
 import java.util.ArrayList;
 
+import cn.coder.toolset.tool.AccessibilityFeature;
+import cn.coder.toolset.tool.ClearPSDataFeature;
+import cn.coder.toolset.tool.DeviceMgrAuthority;
+import cn.coder.toolset.tool.ForgroundAthorityFeature;
+import cn.coder.toolset.tool.NotificationAthority;
 import cn.coder.toolset.tool.AccessibilityTool;
 import cn.coder.toolset.tool.AppMgrTool;
 import cn.coder.toolset.tool.DateSetTool;
@@ -31,6 +36,11 @@ public class ToolManager {
     }
     
     private ToolManager(){
+        mToolSet.add(new ClearPSDataFeature());
+        mToolSet.add(new ForgroundAthorityFeature());
+        mToolSet.add(new NotificationAthority());
+        mToolSet.add(new DeviceMgrAuthority());
+        mToolSet.add(new AccessibilityFeature());
         mToolSet.add(new AppMgrTool());
         mToolSet.add(new VPNTool());
         mToolSet.add(new DevOptionTool());

@@ -1,6 +1,8 @@
-package cn.coder.toolset.feature;
+package cn.coder.toolset.tool;
 
 import android.content.Context;
+
+import cn.coder.toolset.feature.Feature;
 
 /**
  * Created by Administrator on 2017/8/16.

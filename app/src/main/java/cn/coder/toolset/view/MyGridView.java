@@ -27,35 +27,35 @@ public class MyGridView extends GridView {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (mTouchBlankPosListener != null) {
-            if (!isEnabled()) {
-                return isClickable() || isLongClickable();
-            }
-            int action = event.getActionMasked();
-            float x = event.getX();
-            float y = event.getY();
-            final int motionPosition = pointToPosition((int) x, (int) y);
-            if (motionPosition == INVALID_POSITION) {
-                switch (action) {
-                    case MotionEvent.ACTION_DOWN:
-                        mTouchX = x;
-                        mTouchY = y;
-                        mTouchBlankPosListener.onTouchBlank(event);
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        if (Math.abs(mTouchX - x) > 10
-                                || Math.abs(mTouchY - y) > 10) {
-                            mTouchBlankPosListener.onTouchBlank(event);
-                        }
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        mTouchX = 0;
-                        mTouchY = 0;
-                        mTouchBlankPosListener.onTouchBlank(event);
-                        break;
-                }
-            }
-        }
+//        if (mTouchBlankPosListener != null) {
+//            if (!isEnabled()) {
+//                return isClickable() || isLongClickable();
+//            }
+//            int action = event.getActionMasked();
+//            float x = event.getX();
+//            float y = event.getY();
+//            final int motionPosition = pointToPosition((int) x, (int) y);
+//            if (motionPosition == INVALID_POSITION) {
+//                switch (action) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        mTouchX = x;
+//                        mTouchY = y;
+//                        mTouchBlankPosListener.onTouchBlank(event);
+//                        break;
+//                    case MotionEvent.ACTION_MOVE:
+//                        if (Math.abs(mTouchX - x) > 10
+//                                || Math.abs(mTouchY - y) > 10) {
+//                            mTouchBlankPosListener.onTouchBlank(event);
+//                        }
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        mTouchX = 0;
+//                        mTouchY = 0;
+//                        mTouchBlankPosListener.onTouchBlank(event);
+//                        break;
+//                }
+//            }
+//        }
         return super.onTouchEvent(event);
     }
 
